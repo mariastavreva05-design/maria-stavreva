@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Content editor – Maria Stavreva website</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <div>
+      <h1>Website content editor</h1>
+      <p class="sub" id="draft-state">Loading…</p>
+    </div>
+    <div class="actions">
+      <button type="button" id="btn-preview" class="ghost">Preview draft</button>
+      <button type="button" id="btn-import" class="ghost">Open a saved content.js…</button>
+      <button type="button" id="btn-reset" class="ghost">Discard draft</button>
+      <button type="button" id="btn-download" class="primary">Download content.js</button>
+      <input type="file" id="file-in" accept=".js,.json,text/javascript,application/json" hidden>
+    </div>
+  </div>
+  <div class="wrap">
+    <details class="how">
+      <summary>How this editor works (read once)</summary>
+      <ol>
+        <li>Pick a section on the left and change the text in the boxes. English is on the left, Bulgarian on the right.</li>
+        <li>Your changes are kept automatically in this browser as a <strong>draft</strong>. Use <strong>Preview draft</strong> to see them on the real website.</li>
+        <li>When you are happy, click <strong>Download content.js</strong>, then replace the file <code>content/content.js</code> in your website folder (or on GitHub) with the downloaded file. Only then do the changes go live.</li>
+      </ol>
+      <p><strong>About security:</strong> this editor has no password. It cannot change your live website by itself – it only prepares a file for you to upload, so nobody who finds this page can alter your site. Your website host (GitHub or Cloudflare) is what protects publishing, through your own login there.</p>
+    </details>
+  </div>
+</header>
+<div class="wrap layout">
+  <nav class="side" id="side" aria-label="Sections"></nav>
+  <main id="editor" class="editor"></main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="../content/content.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
